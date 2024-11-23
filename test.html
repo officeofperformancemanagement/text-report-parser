@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #left {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 50%;
+        top: 0;
+      }
+      #right {
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      table, th, td {
+        border: 1px solid;
+      }
+    </style>
+    <script>
+      window.app = {
+        state: {
+          text: "   123    42       235 \n   43    23-       12 \n   13    12        53 "
+        }
+      };
+    </script>
+    <script src="./index.js"></script>
+    <body id="app">
+      <div id="left">
+        <textarea></textarea>
+      </div>
+      <div id="right">
+        <table>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <script>
+        function render_input() {
+          document.querySelector('textarea').value = app.state.text;
+        }
+
+        function render_table () {
+          const parsed = text_report_parser.parse(app.state.text);
+
+          //clear existing table
+          const tbody = document.querySelector("table tbody");
+          tbody.innerHTML = "";
+          parsed.forEach(row => {
+            const tr = document.createElement("tr");
+            row.forEach(value => {
+              const td = document.createElement("TD");
+              td.innerText = value;
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          })
+        }
+
+        function render() {
+          render_input();
+          render_table();
+        }
+
+        document.querySelector("textarea").addEventListener("input", function () {
+          app.state.text = this.value;
+          render();
+        })
+
+        document.querySelector("textarea").addEventListener("change", function () {
+          app.state.text = this.value;  
+          render();
+        })
+
+        // initial render
+        render();
+        
+      </script>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "text-report-parser",
+  "version": "0.0.0",
+  "description": "Parser of Legacy Text Reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "report"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "flug": "^2.8.2"
+  }
+}

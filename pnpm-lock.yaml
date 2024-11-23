@@ -1,0 +1,16 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+devDependencies:
+  flug:
+    specifier: ^2.8.2
+    version: 2.8.2
+
+packages:
+
+  /flug@2.8.2:
+    resolution: {integrity: sha512-gcHv/Obq8G4IZhGXx3iZyyMJRd57kwBRb3v0q0aVJQCfcF4mTtR/yyzc88S4GdwcGFUpMbqZjUpfYgrBwpAyRg==}
+    dev: true
